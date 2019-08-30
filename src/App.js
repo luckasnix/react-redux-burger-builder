@@ -1,8 +1,9 @@
 import React from 'react'
+import BurgerBuilderPage from './pages/BurgerBuilderPage'
 
 function App() {
   return (
-    <h1>Bem-vindo ao Burger Builder!</h1>
+    <BurgerBuilderPage/>
   )
 }
 
