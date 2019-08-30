@@ -1,8 +1,9 @@
 import React from 'react'
+import BurgerDisplay from './containers/BurgerDisplay'
 
 function BurgerBuilderPage() {
   return (
-    <h1>Página de contrução de hambúrgueres!</h1>
+    <BurgerDisplay/>
   )
 }
 
