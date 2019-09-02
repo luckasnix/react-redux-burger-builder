@@ -6,9 +6,9 @@ function BurgerDisplay() {
   return (
     <div className={styles.container}>
       <BurgerIngredient type='bread-top'/>
+      <BurgerIngredient type='bacon'/>
       <BurgerIngredient type='salad'/>
       <BurgerIngredient type='cheese'/>
-      <BurgerIngredient type='bacon'/>
       <BurgerIngredient type='meat'/>
       <BurgerIngredient type='bread-bottom'/>
     </div>

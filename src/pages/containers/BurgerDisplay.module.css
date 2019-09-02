@@ -1,5 +1,4 @@
 .container {
-  width: 100%;
-  height: 600px;
-  overflow-y: scroll;
+  width: 420px;
+  height: auto;
 }

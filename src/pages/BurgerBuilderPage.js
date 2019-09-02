@@ -1,9 +1,9 @@
 import React from 'react'
-import BurgerDisplay from './containers/BurgerDisplay'
+import BurgerBuilder from './containers/BurgerBuilder'
 
 function BurgerBuilderPage() {
   return (
-    <BurgerDisplay/>
+    <BurgerBuilder/>
   )
 }
 
