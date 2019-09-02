@@ -1,4 +1,11 @@
 .container {
+  width: 100%;
+  height: 480px;
+  display: grid;
+  justify-content: center;
+  overflow-y: scroll;
+}
+.display {
   width: 420px;
   height: auto;
   display: grid;

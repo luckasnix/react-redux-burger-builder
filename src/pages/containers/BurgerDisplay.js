@@ -11,9 +11,11 @@ function BurgerDisplay(props) {
   }
   return (
     <div className={styles.container}>
-      <BurgerIngredient type='breadTop'/>
-      {ings}
-      <BurgerIngredient type='breadBottom'/>
+      <div className={styles.display}>
+        <BurgerIngredient type='breadTop'/>
+        {ings}
+        <BurgerIngredient type='breadBottom'/>
+      </div>
     </div>
   )
 }
