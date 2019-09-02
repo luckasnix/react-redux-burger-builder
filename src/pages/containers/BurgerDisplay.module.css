@@ -1,6 +1,6 @@
 .container {
-  width: 100%;
-  height: 480px;
+  width: 100vw;
+  height: 75vh;
   display: grid;
   justify-content: center;
   overflow-y: scroll;

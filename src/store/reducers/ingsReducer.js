@@ -26,7 +26,11 @@ const ingsReducer = createReducer(
       return state.map(
         (cur) => {
           if(cur.food === action.payload.food) {
-            return { ...cur, amount: cur.amount - 1 }
+            if(cur.amount === 0) {
+              return cur
+            } else {
+              return { ...cur, amount: cur.amount - 1 }
+            }
           } else {
             return cur
           }

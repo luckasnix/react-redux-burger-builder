@@ -1,5 +1,41 @@
 .container {
-  width: 60vw;
-  height: 60px;
-  background-color: aqua;
+  width: 25vw;
+  height: 50px;
+  padding: 20px;
+  justify-self: center;
+  align-content: center;
+  display: grid;
+  grid-auto-flow: column;
+  border-radius: 10px;
+  background-color: #fbb540;
+}
+.text {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 20px;
+  color: #f8efba;
+}
+.counter {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  align-content: center;
+  grid-gap: 10px;
+}
+.counter p {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 20px;
+  color: #f8efba;
+}
+.counter button {
+  width: 30px;
+  height: 30px;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 20px;
+  color: #f8efba;
+  border: none;
+  border-radius: 50%;
+  background-color: #dc4d41;
 }
