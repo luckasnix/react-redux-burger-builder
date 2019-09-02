@@ -5,7 +5,7 @@ import styles from './BurgerController.module.css'
 function BurgerController() {
   return (
     <div className={styles.container}>
-      <IngredientController type='cheese'/>
+      <IngredientController food='cheese'/>
     </div>
   )
 }
