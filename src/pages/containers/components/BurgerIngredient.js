@@ -9,9 +9,9 @@ import cheese from '../../../assets/images/cheese.svg'
 import meat from '../../../assets/images/meat.svg'
 
 function BurgerIngredient(props) {
-  const ingredients = {
-    'bread-top': breadTop,
-    'bread-bottom': breadBottom,
+  const ingsIcons = {
+    'breadTop': breadTop,
+    'breadBottom': breadBottom,
     'bacon': bacon,
     'salad': salad,
     'cheese': cheese,
@@ -20,7 +20,7 @@ function BurgerIngredient(props) {
   return (
     <img
       className={styles.image}
-      src={ingredients[props.type]}
+      src={ingsIcons[props.type]}
       alt='Ingrediente do hambúrguer'
     />
   )

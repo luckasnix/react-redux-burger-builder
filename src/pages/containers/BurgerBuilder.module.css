@@ -3,6 +3,5 @@
   height: 480px;
   display: grid;
   justify-content: center;
-  align-content: end;
   overflow-y: scroll;
 }

@@ -1,4 +1,6 @@
 .container {
   width: 420px;
   height: auto;
+  display: grid;
+  align-content: end;
 }
