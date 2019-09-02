@@ -20,14 +20,14 @@ function BurgerIngredient(props) {
   return (
     <img
       className={styles.image}
-      src={ingsIcons[props.type]}
+      src={ingsIcons[props.food]}
       alt='Ingrediente do hambúrguer'
     />
   )
 }
 
 BurgerIngredient.propTypes = {
-  type: PropTypes.string.isRequired
+  food: PropTypes.string.isRequired
 }
 
 export default BurgerIngredient

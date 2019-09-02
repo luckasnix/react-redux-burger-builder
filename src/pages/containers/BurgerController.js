@@ -6,6 +6,8 @@ function BurgerController() {
   return (
     <div className={styles.container}>
       <IngredientController food='cheese'/>
+      <IngredientController food='meat'/>
+      <IngredientController food='salad'/>
     </div>
   )
 }
