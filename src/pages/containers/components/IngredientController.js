@@ -41,7 +41,7 @@ function IngredientController(props) {
   )
   return (
     <div className={styles.container}>
-      <p className={styles.text}>{props.food}</p>
+      <p className={styles.label}>{props.label}</p>
       <div className={styles.counter}>
         <button onClick={removeItem}>-</button>
         <p>{curIng[0].amount}</p>

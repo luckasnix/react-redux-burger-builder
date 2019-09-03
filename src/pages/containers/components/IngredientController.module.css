@@ -9,7 +9,7 @@
   border-radius: 10px;
   background-color: #fbb540;
 }
-.text {
+.label {
   font-family: 'Open Sans';
   font-weight: 400;
   font-size: 20px;
@@ -38,4 +38,5 @@
   border: none;
   border-radius: 50%;
   background-color: #dc4d41;
+  cursor: pointer;
 }

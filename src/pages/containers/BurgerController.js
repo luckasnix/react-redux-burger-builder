@@ -15,7 +15,11 @@ function BurgerController() {
         ings.map(
           (cur) => {
             return (
-              <IngredientController key={cur.food} food={cur.food}/>
+              <IngredientController
+                key={cur.food}
+                label={cur.label}
+                food={cur.food}
+              />
             )
           }
         )
