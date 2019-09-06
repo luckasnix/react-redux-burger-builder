@@ -2,7 +2,7 @@ import React from 'react'
 import BurgerDisplay from './containers/BurgerDisplay'
 import BurgerController from './containers/BurgerController'
 
-function BurgerBuilderPage() {
+function BurgerBuilder() {
   return (
     <>
       <BurgerDisplay/>
@@ -11,4 +11,4 @@ function BurgerBuilderPage() {
   )
 }
 
-export default BurgerBuilderPage
+export default BurgerBuilder

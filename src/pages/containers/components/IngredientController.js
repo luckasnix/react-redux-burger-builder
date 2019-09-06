@@ -1,19 +1,9 @@
 import React, { useCallback } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import * as Actions from '../../../store/reducers/actions/ingsActions'
 import styles from './IngredientController.module.css'
 
 function IngredientController(props) {
-  const ings = useSelector(
-    (state) => {
-      return state.ings
-    }
-  )
-  const curIng = ings.filter(
-    (cur) => {
-      return cur.food === props.food
-    }
-  )
   const dispatch = useDispatch()
   const addIng = useCallback(
     (food) => {
@@ -43,8 +33,8 @@ function IngredientController(props) {
     <div className={styles.container}>
       <p className={styles.label}>{props.label}</p>
       <div className={styles.counter}>
-        <button onClick={removeItem}>-</button>
-        <p>{curIng[0].amount}</p>
+        <button disabled={props.amount === 0} onClick={removeItem}>-</button>
+        <p>{props.amount}</p>
         <button onClick={addItem}>+</button>
       </div>
     </div>

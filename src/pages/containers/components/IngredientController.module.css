@@ -40,3 +40,6 @@
   background-color: #dc4d41;
   cursor: pointer;
 }
+.counter button:disabled {
+  background-color: #ff7f6c;
+}

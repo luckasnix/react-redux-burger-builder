@@ -19,6 +19,7 @@ function BurgerController() {
                 key={cur.food}
                 label={cur.label}
                 food={cur.food}
+                amount={cur.amount}
               />
             )
           }
