@@ -2,8 +2,18 @@
   width: 100vw;
   height: 25vh;
   display: grid;
-  align-content: center;
-  grid-template-columns: repeat(2, 2fr);
-  grid-gap: 25px;
+  grid-template-rows: repeat(2, 1fr);
   background-color: #dc4d41;
+}
+.priceDisplay {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.controlPanel {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
 }

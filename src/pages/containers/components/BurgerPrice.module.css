@@ -1,0 +1,25 @@
+.container {
+  width: 250px;
+  height: 50px;
+  padding: 20px;
+  justify-self: center;
+  align-content: center;
+  display: grid;
+  grid-auto-flow: column;
+  border-radius: 10px;
+  background-color: #fbb540;
+}
+.label {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+  color: #f8efba;
+}
+.price {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 20px;
+  text-align: right;
+  color: #dc4d41;
+}
