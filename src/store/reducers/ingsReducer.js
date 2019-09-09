@@ -2,10 +2,10 @@ import { createReducer } from 'redux-create-reducer'
 import * as Types from './actions/types/ingsTypes'
 
 const initState = [
-  { label: 'Bacon', food: 'bacon', price: 100, amount: 0 },
-  { label: 'Salada', food: 'salad', price: 50, amount: 0 },
-  { label: 'Queijo', food: 'cheese', price: 200, amount: 0 },
-  { label: 'Carne', food: 'meat', price: 350, amount: 0 }
+  { label: 'Bacon', food: 'bacon', price: 1, amount: 0 },
+  { label: 'Salada', food: 'salad', price: 0.5, amount: 0 },
+  { label: 'Queijo', food: 'cheese', price: 2, amount: 0 },
+  { label: 'Carne', food: 'meat', price: 3.5, amount: 0 }
 ]
 
 const ingsReducer = createReducer(

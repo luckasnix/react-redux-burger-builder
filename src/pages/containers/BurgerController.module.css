@@ -9,6 +9,8 @@
   display: grid;
   justify-content: center;
   align-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
 }
 .controlPanel {
   display: grid;
