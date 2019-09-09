@@ -11,33 +11,23 @@ function BurgerController() {
       return state.ings
     }
   )
-  const getCurrentPrice = useCallback(
-    () => {
-      return ings.reduce(
-        (accum, cur) => {
-          return accum + (cur.price * cur.amount)
-        },
-        2
-      )
+  const currentPrice = ings.reduce(
+    (accum, cur) => {
+      return accum + (cur.price * cur.amount)
     },
-    [ings]
+    2
   )
-  const getTotalAmount = useCallback(
-    () => {
-      const totalAmount = ings.map(
-        (cur) => {
-          return cur.amount
-        }
-      ).reduce(
-        (accum, cur) => {
-          return accum + cur
-        },
-        0
-      )
-      return !totalAmount
-    },
-    [ings]
-  )
+  const totalAmount = ings
+    .map(
+      (cur) => {
+        return cur.amount
+      }
+    )
+    .reduce(
+      (accum, cur) => {
+        return accum + cur
+      }
+    )
   const handleOrder = useCallback(
     () => {
       window.alert('Pedido realizado com sucesso!')
@@ -47,8 +37,8 @@ function BurgerController() {
   return (
     <div className={styles.container}>
       <div className={styles.priceDisplay}>
-        <BurgerPrice label='Preço:' price={getCurrentPrice()}/>
-        <OrderButton title='Compre agora!' clicked={handleOrder} disabled={getTotalAmount()}/>
+        <BurgerPrice label='Preço:' price={currentPrice}/>
+        <OrderButton title='Compre agora!' clicked={handleOrder} disabled={!totalAmount}/>
       </div>
       <div className={styles.controlPanel}>
         {

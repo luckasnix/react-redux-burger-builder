@@ -41,5 +41,5 @@
   cursor: pointer;
 }
 .counter button:disabled {
-  background-color: #e26d63;
+  opacity: 0.25;
 }
