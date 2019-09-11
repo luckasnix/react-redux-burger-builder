@@ -5,8 +5,8 @@ function OrderButton(props) {
   return (
     <button
       className={styles.button}
-      onClick={props.clicked}
       disabled={props.disabled}
+      onClick={props.clicked}
     >
       {props.title}
     </button>

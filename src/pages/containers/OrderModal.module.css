@@ -1,0 +1,85 @@
+.container {
+  width: 400px;
+  height: 480px;
+  position: fixed;
+  top: calc(50vh - 240px);
+  left: calc(50vw - 200px);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-gap: 10px;
+  border-radius: 10px;
+  background-color: #f8efba;
+  z-index: 999;
+}
+.table {
+  border-radius: 5px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+.table th {
+  width: 160px;
+  height: 30px;
+  padding-left: 10px;
+  text-align: left;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 14px;
+  color: #f8efba;
+  background-color: #dc4d41;
+}
+.table td {
+  width: 160px;
+  height: 30px;
+  padding-left: 20px;
+  text-align: left;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 14px;
+  color: #dc4d41;
+  background-color: #fbb540;
+}
+.totalDisplay {
+  width: 320px;
+  height: 30px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 14px;
+  color: #f8efba;
+  border-radius: 5px;
+  background-color: #dc4d41;
+}
+.closeButton {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 20px;
+  color: #dc4d41;
+  border: none;
+  border-radius: 50%;
+  background-color: #fbb540;
+  cursor: pointer;
+}
+.purchaseButton {
+  width: 160px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  left: 120px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #dc4d41;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 14px;
+  color: #f8efba;
+  cursor: pointer;
+}

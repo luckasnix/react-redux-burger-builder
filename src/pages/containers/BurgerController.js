@@ -1,8 +1,9 @@
-import React, { useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import BurgerPrice from './components/BurgerPrice'
 import OrderButton from './components/OrderButton'
 import IngredientController from './components/IngredientController'
+import OrderModal from './OrderModal'
 import styles from './BurgerController.module.css'
 
 function BurgerController() {
@@ -17,22 +18,27 @@ function BurgerController() {
     },
     2
   )
-  const totalAmount = ings
-    .map(
+  const totalAmount = ings.map(
       (cur) => {
         return cur.amount
       }
-    )
-    .reduce(
+    ).reduce(
       (accum, cur) => {
         return accum + cur
       }
     )
+  const [modalVisibility, setModalVisibility] = useState(false)
   const handleOrder = useCallback(
     () => {
-      window.alert('Pedido realizado com sucesso!')
+      setModalVisibility(true)
     },
-    []
+    [setModalVisibility]
+  )
+  const handleClosure = useCallback(
+    () => {
+      setModalVisibility(false)
+    },
+    [setModalVisibility]
   )
   return (
     <div className={styles.container}>
@@ -56,6 +62,7 @@ function BurgerController() {
           )
         }
       </div>
+      {modalVisibility && <OrderModal closure={handleClosure}/>}
     </div>
   )
 }
