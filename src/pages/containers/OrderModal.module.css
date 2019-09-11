@@ -4,15 +4,15 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  display: grid;
-  justify-content: center;
-  align-content: center;
   background-color: #0000007f;
+  z-index: 888;
 }
 .container {
   width: 400px;
   height: 480px;
-  position: relative;
+  position: fixed;
+  top: calc(50vh - 240px);
+  left: calc(50vw - 200px);
   display: grid;
   justify-content: center;
   align-content: center;

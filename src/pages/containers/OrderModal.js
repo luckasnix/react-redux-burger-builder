@@ -29,7 +29,8 @@ function OrderModal(props) {
     []
   )
   return (
-    <div className={styles.blackdrop} onClick={props.closure}>
+    <>
+      <div className={styles.blackdrop} onClick={props.closure}/>
       <div className={styles.container}>
         <table className={styles.table}>
           <thead>
@@ -57,7 +58,7 @@ function OrderModal(props) {
         <button className={styles.closeButton} onClick={props.closure}>X</button>
         <button className={styles.purchaseButton} onClick={handlePurchase}>Finalizar compra!</button>
       </div>
-    </div>
+    </>
   )
 }
 
