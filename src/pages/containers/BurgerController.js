@@ -43,7 +43,7 @@ function BurgerController() {
   return (
     <div className={styles.container}>
       <div className={styles.priceDisplay}>
-        <BurgerPrice label='Preço:' price={currentPrice}/>
+        <BurgerPrice label='Total:' price={currentPrice}/>
         <OrderButton title='Compre agora!' clicked={handleOrder} disabled={!totalAmount}/>
       </div>
       <div className={styles.controlPanel}>
