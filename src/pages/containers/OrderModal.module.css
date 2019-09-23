@@ -4,7 +4,8 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  background-color: #0000007f;
+  background-color: #000000;
+  opacity: 0.5;
   z-index: 888;
 }
 .container {

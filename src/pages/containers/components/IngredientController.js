@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 import * as Actions from '../../../store/reducers/actions/ingsActions'
 import styles from './IngredientController.module.css'
 
@@ -39,6 +40,12 @@ function IngredientController(props) {
       </div>
     </div>
   )
+}
+
+IngredientController.propTypes = {
+  food: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired
 }
 
 export default IngredientController

@@ -8,15 +8,16 @@ import salad from '../../../assets/images/salad.svg'
 import cheese from '../../../assets/images/cheese.svg'
 import meat from '../../../assets/images/meat.svg'
 
+const ingsIcons = {
+  'breadTop': breadTop,
+  'breadBottom': breadBottom,
+  'bacon': bacon,
+  'salad': salad,
+  'cheese': cheese,
+  'meat': meat
+}
+
 function BurgerIngredient(props) {
-  const ingsIcons = {
-    'breadTop': breadTop,
-    'breadBottom': breadBottom,
-    'bacon': bacon,
-    'salad': salad,
-    'cheese': cheese,
-    'meat': meat
-  }
   return (
     <img
       className={styles.image}

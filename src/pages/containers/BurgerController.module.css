@@ -1,6 +1,6 @@
 .container {
   width: 100vw;
-  height: 25vh;
+  height: 160px;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   background-color: #dc4d41;
