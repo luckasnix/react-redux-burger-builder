@@ -1,0 +1,24 @@
+.loader,
+.loader:after {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
+.loader {
+  margin: 60px auto;
+  position: relative;
+  border-top: 1.1em solid #fbb5407f;
+  border-right: 1.1em solid #fbb5407f;
+  border-bottom: 1.1em solid #fbb5407f;
+  border-left: 1.1em solid #dc4d41;
+  transform: translateZ(0);
+  animation: load 1.1s infinite linear;
+}
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

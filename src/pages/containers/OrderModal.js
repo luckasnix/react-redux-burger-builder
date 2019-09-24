@@ -1,5 +1,7 @@
-import React, { useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { useSelector } from 'react-redux'
+import axios from 'axios'
+import LoaderSpinner from './components/LoaderSpinner'
 import styles from './OrderModal.module.css'
 
 const { format: formatPrice } = new Intl.NumberFormat(
@@ -22,16 +24,35 @@ function OrderModal(props) {
     },
     2
   )
+  const [isLoading, setIsLoading] = useState(false)
   const handlePurchase = useCallback(
     () => {
-      window.alert('Comprado!')
+      setIsLoading(true)
+      axios.post('https://react-redux-burger-builder.firebaseio.com/order.json', ings)
+        .then(
+          (res) => {
+            console.log(res)
+          }
+        )
+        .catch(
+          (err) => {
+            console.log(err)
+          }
+        )
+        .finally(
+          () => {
+            setIsLoading(false)
+          }
+        )
     },
-    []
+    [ings, setIsLoading]
   )
-  return (
-    <>
-      <div className={styles.blackdrop} onClick={props.closure}/>
-      <div className={styles.container}>
+  let orderSummary
+  if (isLoading) {
+    orderSummary = <LoaderSpinner/>
+  } else {
+    orderSummary = (
+      <>
         <table className={styles.table}>
           <thead>
             <tr>
@@ -55,8 +76,16 @@ function OrderModal(props) {
           </tbody>
         </table>
         <p className={styles.totalDisplay}>Total: {formatPrice(currentPrice)}</p>
-        <button className={styles.closeButton} onClick={props.closure}>X</button>
         <button className={styles.purchaseButton} onClick={handlePurchase}>Finalizar compra!</button>
+      </>
+    )
+  }
+  return (
+    <>
+      <div className={styles.blackdrop} onClick={props.closure}/>
+      <div className={styles.container}>
+        {orderSummary}
+        <button className={styles.closeButton} onClick={props.closure}>X</button>
       </div>
     </>
   )
