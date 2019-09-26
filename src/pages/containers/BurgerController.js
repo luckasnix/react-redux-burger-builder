@@ -12,21 +12,32 @@ function BurgerController() {
       return state.ings
     }
   )
-  const currentPrice = ings.reduce(
-    (accum, cur) => {
-      return accum + (cur.price * cur.amount)
-    },
-    2
-  )
-  const totalAmount = ings.map(
-      (cur) => {
-        return cur.amount
-      }
-    ).reduce(
+  let currentPrice
+  if (ings === []) {
+    currentPrice = 0
+  } else {
+    currentPrice = ings.reduce(
       (accum, cur) => {
-        return accum + cur
-      }
+        return accum + (cur.price * cur.amount)
+      },
+      2
     )
+  }
+  let totalAmount
+  if (ings === []) {
+    totalAmount = 0
+  } else {
+    totalAmount = ings.map(
+        (cur) => {
+          return cur.amount
+        }
+      ).reduce(
+        (accum, cur) => {
+          return accum + cur
+        },
+        0
+      )
+  }
   const [modalVisibility, setModalVisibility] = useState(false)
   const handleOrder = useCallback(
     () => {
@@ -48,7 +59,7 @@ function BurgerController() {
       </div>
       <div className={styles.controlPanel}>
         {
-          ings.map(
+          ings !== [] && ings.map(
             (cur) => {
               return (
                 <IngredientController

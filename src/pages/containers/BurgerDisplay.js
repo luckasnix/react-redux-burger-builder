@@ -14,7 +14,7 @@ function BurgerDisplay() {
       <div className={styles.display}>
         <BurgerIngredient food='breadTop'/>
         {
-          ings.map(
+          ings !== [] && ings.map(
             (cur) => {
               let curIngs = []
               for(let amt = 1; amt <= cur.amount; amt++) {

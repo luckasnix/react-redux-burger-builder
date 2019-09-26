@@ -1,16 +1,14 @@
 import { createReducer } from 'redux-create-reducer'
 import * as Types from './actions/types/ingsTypes'
 
-const initState = [
-  { label: 'Bacon', food: 'bacon', price: 1, amount: 0 },
-  { label: 'Salada', food: 'salad', price: 0.5, amount: 0 },
-  { label: 'Queijo', food: 'cheese', price: 2, amount: 0 },
-  { label: 'Carne', food: 'meat', price: 3.5, amount: 0 }
-]
+const initState = []
 
 const ingsReducer = createReducer(
   initState,
   {
+    [Types.CREATE_MENU]: (_, action) => {
+      return action.payload.menu
+    },
     [Types.ADD_ING]: (state, action) => {
       return state.map(
         (cur) => {

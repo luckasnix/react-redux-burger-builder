@@ -18,12 +18,17 @@ function OrderModal(props) {
       return state.ings
     }
   )
-  const currentPrice = ings.reduce(
-    (accum, cur) => {
-      return accum + (cur.price * cur.amount)
-    },
-    2
-  )
+  let currentPrice
+  if (ings === []) {
+    currentPrice = 0
+  } else {
+    currentPrice = ings.reduce(
+      (accum, cur) => {
+        return accum + (cur.price * cur.amount)
+      },
+      2
+    )
+  }
   const [isLoading, setIsLoading] = useState(false)
   const handlePurchase = useCallback(
     () => {
@@ -62,7 +67,7 @@ function OrderModal(props) {
           </thead>
           <tbody>
             {
-              ings.map(
+              ings !== [] && ings.map(
                 (cur) => {
                   return (
                     <tr key={cur.food}>
