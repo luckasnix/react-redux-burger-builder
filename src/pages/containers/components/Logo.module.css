@@ -1,0 +1,6 @@
+.logo {
+  display: grid;
+  justify-content: start;
+  align-content: center;
+  color: #dc4d41;
+}

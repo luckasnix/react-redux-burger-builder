@@ -15,8 +15,7 @@ function BurgerBuilder() {
   )
   useEffect(
     () => {
-      axios
-        .get('https://react-redux-burger-builder.firebaseio.com/ingredients.json')
+      axios.get('https://react-redux-burger-builder.firebaseio.com/ingredients.json')
         .then(
           (res) => {
             createMenu(res.data)

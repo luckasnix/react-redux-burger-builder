@@ -13,12 +13,12 @@
   height: 32px;
 }
 .navItem svg path {
-  fill: #fbb540;
+  fill: #dc4d41;
 }
 .navItem a {
   font-family: 'Open Sans';
   font-weight: 400;
   font-size: 20px;
-  color: #fbb540;
+  color: #dc4d41;
   text-decoration: none;
 }

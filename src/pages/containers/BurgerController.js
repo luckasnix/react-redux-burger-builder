@@ -52,29 +52,31 @@ function BurgerController() {
     [setModalVisibility]
   )
   return (
-    <div className={styles.container}>
-      <div className={styles.priceDisplay}>
-        <BurgerPrice label='Total:' price={currentPrice}/>
-        <OrderButton title='Compre agora!' clicked={handleOrder} disabled={!totalAmount}/>
-      </div>
-      <div className={styles.controlPanel}>
-        {
-          ings !== [] && ings.map(
-            (cur) => {
-              return (
-                <IngredientController
-                  key={cur.food}
-                  label={cur.label}
-                  food={cur.food}
-                  amount={cur.amount}
-                />
-              )
-            }
-          )
-        }
+    <>
+      <div className={styles.container}>
+        <div className={styles.priceDisplay}>
+          <BurgerPrice label='Total:' price={currentPrice}/>
+          <OrderButton title='Compre agora!' clicked={handleOrder} disabled={!totalAmount}/>
+        </div>
+        <div className={styles.controlPanel}>
+          {
+            ings !== [] && ings.map(
+              (cur) => {
+                return (
+                  <IngredientController
+                    key={cur.food}
+                    label={cur.label}
+                    food={cur.food}
+                    amount={cur.amount}
+                  />
+                )
+              }
+            )
+          }
+        </div>
       </div>
       {modalVisibility && <OrderModal closure={handleClosure}/>}
-    </div>
+    </>
   )
 }
 

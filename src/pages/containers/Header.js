@@ -2,6 +2,7 @@ import React from 'react'
 import NavList from './components/NavList'
 import NavItem from './components/NavItem'
 import styles from './Header.module.css'
+import Logo from './components/Logo'
 import { ReactComponent as ConhecerIcon } from '../../assets/images/conhecer.svg'
 import { ReactComponent as ContruirIcon } from '../../assets/images/construir.svg'
 import { ReactComponent as AcompanharIcon } from '../../assets/images/acompanhar.svg'
@@ -15,7 +16,7 @@ const sections = [
 function Header() {
   return (
     <header className={styles.header}>
-      <h1>LOGO</h1>
+      <Logo/>
       <NavList>
         {
           sections.map(
