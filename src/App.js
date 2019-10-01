@@ -2,8 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import firebase from 'firebase/app'
 import store from './store/store'
-import Header from './pages/containers/Header'
-import BurgerBuilder from './pages/BurgerBuilder'
+import Main from './pages/Main'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB6zNaSdYm8_CVyASovG8gH05glsD7zzDM',
@@ -19,8 +18,7 @@ firebase.initializeApp(firebaseConfig)
 function App() {
   return (
     <Provider store={store}>
-      <Header/>
-      <BurgerBuilder/>
+      <Main/>
     </Provider>
   )
 }

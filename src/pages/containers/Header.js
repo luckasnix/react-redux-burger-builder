@@ -9,7 +9,7 @@ import { ReactComponent as AcompanharIcon } from '../../assets/images/acompanhar
 
 const sections = [
   { name: 'Conhecer', path: '/', icon: ConhecerIcon },
-  { name: 'Construir', path: '/', icon: ContruirIcon },
+  { name: 'Construir', path: '/builder', icon: ContruirIcon },
   { name: 'Acompanhar', path: '/', icon: AcompanharIcon }
 ]
 
