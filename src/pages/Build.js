@@ -5,7 +5,7 @@ import BurgerDisplay from './containers/BurgerDisplay'
 import BurgerController from './containers/BurgerController'
 import * as Actions from '../store/reducers/actions/ingsActions'
 
-function BurgerBuilder() {
+function Build() {
   const dispatch = useDispatch()
   const createMenu = useCallback(
     (menu) => {
@@ -32,4 +32,4 @@ function BurgerBuilder() {
   )
 }
 
-export default BurgerBuilder
+export default Build
