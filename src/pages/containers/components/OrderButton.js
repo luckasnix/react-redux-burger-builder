@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './OrderButton.module.css'
 
-function OrderButton(props) {
+function OrderButton({ title, clicked, disabled }) {
   return (
     <button
       className={styles.button}
-      disabled={props.disabled}
-      onClick={props.clicked}
+      disabled={disabled}
+      onClick={clicked}
     >
-      {props.title}
+      {title}
     </button>
   )
 }

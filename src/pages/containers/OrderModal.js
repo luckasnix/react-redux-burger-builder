@@ -1,7 +1,6 @@
-import React, { useState, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
-import axios from 'axios'
-import LoaderSpinner from './components/LoaderSpinner'
+import { withRouter } from 'react-router-dom'
 import styles from './OrderModal.module.css'
 
 const { format: formatPrice } = new Intl.NumberFormat(
@@ -12,7 +11,7 @@ const { format: formatPrice } = new Intl.NumberFormat(
   }
 )
 
-function OrderModal(props) {
+function OrderModal({ history, closure }) {
   const ings = useSelector(
     (state) => {
       return state.ings
@@ -29,36 +28,17 @@ function OrderModal(props) {
       2
     )
   }
-  const [isLoading, setIsLoading] = useState(false)
-  const handlePurchase = useCallback(
+  const handleFinish = useCallback(
     () => {
-      setIsLoading(true)
-      axios.post('https://react-redux-burger-builder.firebaseio.com/order.json', ings)
-        .then(
-          (res) => {
-            console.log(res)
-          }
-        )
-        .catch(
-          (err) => {
-            console.log(err)
-          }
-        )
-        .finally(
-          () => {
-            setIsLoading(false)
-          }
-        )
+      history.push('/checkout');
     },
-    [ings, setIsLoading]
+    [history]
   )
-  let orderSummary
-  if (isLoading) {
-    orderSummary = <LoaderSpinner/>
-  } else {
-    orderSummary = (
-      <>
-        <table className={styles.table}>
+  return (
+    <>
+      <div className={styles.blackdrop} onClick={closure}/>
+      <div className={styles.container}>
+      <table className={styles.table}>
           <thead>
             <tr>
               <th>Ingrediente</th>
@@ -81,19 +61,11 @@ function OrderModal(props) {
           </tbody>
         </table>
         <p className={styles.totalDisplay}>Total: {formatPrice(currentPrice)}</p>
-        <button className={styles.purchaseButton} onClick={handlePurchase}>Finalizar compra!</button>
-      </>
-    )
-  }
-  return (
-    <>
-      <div className={styles.blackdrop} onClick={props.closure}/>
-      <div className={styles.container}>
-        {orderSummary}
-        <button className={styles.closeButton} onClick={props.closure}>X</button>
+        <button className={styles.purchaseButton} onClick={handleFinish}>Finalizar compra!</button>
+        <button className={styles.closeButton} onClick={closure}>X</button>
       </div>
     </>
   )
 }
 
-export default OrderModal
+export default withRouter(OrderModal)

@@ -6,7 +6,12 @@
   align-content: center;
   grid-auto-flow: column;
   grid-gap: 10px;
-  cursor: pointer;
+  text-decoration: none;
+}
+.navItem div {
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 .navItem svg {
   width: 32px;
@@ -15,10 +20,9 @@
 .navItem svg path {
   fill: #dc4d41;
 }
-.navItem a {
+.navItem p {
   font-family: 'Open Sans';
   font-weight: 400;
   font-size: 20px;
   color: #dc4d41;
-  text-decoration: none;
 }

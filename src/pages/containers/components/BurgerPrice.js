@@ -10,11 +10,11 @@ const { format: formatPrice } = new Intl.NumberFormat(
   }
 )
 
-function BurgerPrice(props) {
+function BurgerPrice({ label, price }) {
   return (
     <div className={styles.container}>
-      <p className={styles.label}>{props.label}</p>
-      <p className={styles.price}>{formatPrice(props.price)}</p>
+      <p className={styles.label}>{label}</p>
+      <p className={styles.price}>{formatPrice(price)}</p>
     </div>
   )
 }

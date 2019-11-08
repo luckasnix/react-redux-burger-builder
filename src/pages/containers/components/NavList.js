@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './NavList.module.css'
 
-function NavList(props) {
+function NavList({ children }) {
   return (
     <nav className={styles.navList}>
-      <ul>{props.children}</ul>
+      <ul>{children}</ul>
     </nav>
   )
 }

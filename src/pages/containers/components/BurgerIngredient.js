@@ -17,11 +17,11 @@ const ingsIcons = {
   'meat': meat
 }
 
-function BurgerIngredient(props) {
+function BurgerIngredient({ food }) {
   return (
     <img
       className={styles.image}
-      src={ingsIcons[props.food]}
+      src={ingsIcons[food]}
       alt='Ingrediente do hambúrguer'
     />
   )

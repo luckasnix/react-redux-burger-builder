@@ -2,12 +2,14 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './NavItem.module.css'
 
-function NavItem(props) {
+function NavItem({ title, link, icon }) {
   return (
-    <li className={styles.navItem}>
-      {props.icon}
-      <NavLink to={props.link}>{props.title}</NavLink>
-    </li>
+    <NavLink className={styles.navItem} to={link}>
+      <div>{icon}</div>
+      <div>
+        <p>{title}</p>
+      </div>
+    </NavLink>
   )
 }
 

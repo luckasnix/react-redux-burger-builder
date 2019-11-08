@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import * as Actions from '../../../store/reducers/actions/ingsActions'
 import styles from './IngredientController.module.css'
 
-function IngredientController(props) {
+function IngredientController({ label, food, amount }) {
   const dispatch = useDispatch()
   const addIng = useCallback(
     (food) => {
@@ -14,9 +14,9 @@ function IngredientController(props) {
   )
   const addItem = useCallback(
     () => {
-      addIng(props.food)
+      addIng(food)
     },
-    [addIng, props.food]
+    [addIng, food]
   )
   const removeIng = useCallback(
     (food) => {
@@ -26,16 +26,16 @@ function IngredientController(props) {
   )
   const removeItem = useCallback(
     () => {
-      removeIng(props.food)
+      removeIng(food)
     },
-    [removeIng, props.food]
+    [removeIng, food]
   )
   return (
     <div className={styles.container}>
-      <p className={styles.label}>{props.label}</p>
+      <p className={styles.label}>{label}</p>
       <div className={styles.counter}>
-        <button disabled={props.amount === 0} onClick={removeItem}>-</button>
-        <p>{props.amount}</p>
+        <button disabled={amount === 0} onClick={removeItem}>-</button>
+        <p>{amount}</p>
         <button onClick={addItem}>+</button>
       </div>
     </div>
