@@ -1,7 +1,6 @@
 import React from 'react'
-import { Provider } from 'react-redux'
+import Provider from './context/provider/Provider'
 import firebase from 'firebase/app'
-import store from './store/store'
 import Main from './pages/Main'
 
 const firebaseConfig = {
@@ -17,7 +16,7 @@ firebase.initializeApp(firebaseConfig)
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider>
       <Main/>
     </Provider>
   )

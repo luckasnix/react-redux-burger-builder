@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useCallback, useContext } from 'react'
 import { withRouter } from 'react-router-dom'
+import Context from '../../context/Context'
 import styles from './OrderModal.module.css'
 
 const { format: formatPrice } = new Intl.NumberFormat(
@@ -12,16 +12,12 @@ const { format: formatPrice } = new Intl.NumberFormat(
 )
 
 function OrderModal({ history, closure }) {
-  const ings = useSelector(
-    (state) => {
-      return state.ings
-    }
-  )
+  const { state } = useContext(Context)
   let currentPrice
-  if (ings === []) {
+  if (state === []) {
     currentPrice = 0
   } else {
-    currentPrice = ings.reduce(
+    currentPrice = state.reduce(
       (accum, cur) => {
         return accum + (cur.price * cur.amount)
       },
@@ -47,7 +43,7 @@ function OrderModal({ history, closure }) {
           </thead>
           <tbody>
             {
-              ings !== [] && ings.map(
+              state !== [] && state.map(
                 (cur) => {
                   return (
                     <tr key={cur.food}>

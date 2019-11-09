@@ -1,15 +1,15 @@
-import React, { useEffect, useCallback } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useCallback, useContext } from 'react'
 import axios from 'axios'
 import BurgerDisplay from './containers/BurgerDisplay'
 import BurgerController from './containers/BurgerController'
-import * as Actions from '../store/reducers/actions/ingsActions'
+import Context from '../context/Context'
+import * as actions from '../context/provider/reducer/actions/actions'
 
 function Build() {
-  const dispatch = useDispatch()
+  const { dispatch } = useContext(Context)
   const createMenu = useCallback(
     (menu) => {
-      dispatch(Actions.createMenu(menu))
+      dispatch(actions.createMenu(menu))
     },
     [dispatch]
   )

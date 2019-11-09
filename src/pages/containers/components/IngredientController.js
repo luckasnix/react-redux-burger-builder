@@ -1,14 +1,14 @@
-import React, { useCallback } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useCallback, useContext } from 'react'
 import PropTypes from 'prop-types'
-import * as Actions from '../../../store/reducers/actions/ingsActions'
+import * as actions from '../../../context/provider/reducer/actions/actions'
+import Context from '../../../context/Context'
 import styles from './IngredientController.module.css'
 
 function IngredientController({ label, food, amount }) {
-  const dispatch = useDispatch()
+  const { dispatch } = useContext(Context)
   const addIng = useCallback(
     (food) => {
-      dispatch(Actions.addIng(food))
+      dispatch(actions.addIng(food))
     },
     [dispatch]
   )
@@ -20,7 +20,7 @@ function IngredientController({ label, food, amount }) {
   )
   const removeIng = useCallback(
     (food) => {
-      dispatch(Actions.removeIng(food))
+      dispatch(actions.removeIng(food))
     },
     [dispatch]
   )

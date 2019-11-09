@@ -1,22 +1,18 @@
-import React, { useState, useCallback } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState, useCallback, useContext } from 'react'
 import BurgerPrice from './components/BurgerPrice'
 import OrderButton from './components/OrderButton'
 import IngredientController from './components/IngredientController'
 import OrderModal from './OrderModal'
+import Context from '../../context/Context'
 import styles from './BurgerController.module.css'
 
 function BurgerController() {
-  const ings = useSelector(
-    (state) => {
-      return state.ings
-    }
-  )
+  const { state } = useContext(Context)
   let currentPrice
-  if (ings === []) {
+  if (state === []) {
     currentPrice = 0
   } else {
-    currentPrice = ings.reduce(
+    currentPrice = state.reduce(
       (accum, cur) => {
         return accum + (cur.price * cur.amount)
       },
@@ -24,10 +20,10 @@ function BurgerController() {
     )
   }
   let totalAmount
-  if (ings === []) {
+  if (state === []) {
     totalAmount = 0
   } else {
-    totalAmount = ings.map(
+    totalAmount = state.map(
         (cur) => {
           return cur.amount
         }
@@ -60,7 +56,7 @@ function BurgerController() {
         </div>
         <div className={styles.controlPanel}>
           {
-            ings !== [] && ings.map(
+            state !== [] && state.map(
               (cur) => {
                 return (
                   <IngredientController
