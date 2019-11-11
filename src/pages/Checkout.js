@@ -18,7 +18,6 @@ function Checkout({ location }) {
       for (let param of query.entries()) {
         ings[param[0]] = +param[1]
       }
-      console.log(ings)
     },
     [location]
   )

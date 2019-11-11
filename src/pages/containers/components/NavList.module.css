@@ -1,5 +1,5 @@
 .navList ul {
   display: grid;
+  justify-content: end;
   grid-auto-flow: column;
-  list-style: none;
 }

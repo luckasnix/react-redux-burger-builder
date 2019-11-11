@@ -4,12 +4,16 @@ import styles from './NavItem.module.css'
 
 function NavItem({ title, link, icon }) {
   return (
-    <NavLink className={styles.navItem} to={link}>
-      <div>{icon}</div>
-      <div>
+    <li className={styles.navItem}>
+      <NavLink
+        to={link}
+        exact={true}
+        activeClassName={styles.active}
+      >
+        <div>{icon}</div>
         <p>{title}</p>
-      </div>
-    </NavLink>
+      </NavLink>
+    </li>
   )
 }
 
