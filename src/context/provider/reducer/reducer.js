@@ -7,7 +7,7 @@ function reducer(state, action) {
     case types.ADD_ING:
       return state.map(
         (cur) => {
-          if(cur.food === action.payload.food) {
+          if (cur.food === action.payload.food) {
             return { ...cur, amount: cur.amount + 1 }
           } else {
             return cur
@@ -17,8 +17,8 @@ function reducer(state, action) {
     case types.REMOVE_ING:
       return state.map(
         (cur) => {
-          if(cur.food === action.payload.food) {
-            if(cur.amount === 0) {
+          if (cur.food === action.payload.food) {
+            if (cur.amount === 0) {
               return cur
             } else {
               return { ...cur, amount: cur.amount - 1 }

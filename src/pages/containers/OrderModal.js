@@ -26,9 +26,20 @@ function OrderModal({ history, closure }) {
   }
   const handleFinish = useCallback(
     () => {
-      history.push('/checkout');
+      const queryParams = state.map(
+        (cur) => {
+          return encodeURIComponent(cur.food) + '=' + encodeURIComponent(cur.amount)
+        }
+      )
+      console.log(state)
+      history.push(
+        {
+          pathname: '/checkout',
+          search: '?' + queryParams.join('&')
+        }
+      )
     },
-    [history]
+    [state, history]
   )
   return (
     <>
